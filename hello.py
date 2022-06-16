@@ -1,7 +1,8 @@
-def addition():
-    print(6 + 7)
+def addition(var1,var2):
+    print(var1+var2)
 
-addition()
+addition(1,6)
+addition(2,3)
 
 def subtraction():
     print(10 - 2)
@@ -24,3 +25,5 @@ def arg(mess,app):
     print(mess + app)
 
 arg("i love", "to program")
+price = input("enter price")
+print(f"the price is {price}")
