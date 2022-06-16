@@ -1,23 +1,23 @@
-def addition(var1,var2):
-    print(var1+var2)
+#adds two numbers from  user input
+var1 = int(input("enter number"))
+var2 = int(input("enter another number"))
+sum = (var1) + (var2)
+print(f"the total is {sum}")
 
-addition(1,6)
-addition(2,3)
+var1 = int(input("enter number"))
+var2 = int(input("enter another number"))
+sum = (var1) - (var2)
+print(f"the total is {sum}")
 
-def subtraction():
-    print(10 - 2)
+var1 = int(input("enter number"))
+var2 = int(input("enter another number"))
+sum = (var1) * (var2)
+print(f"the total is {sum}")
 
-subtraction()
-
-def multiplication():
-    print(6 * 7)
-
-multiplication()
-
-def division():
-    print(42 / 7)
-
-division()
+var1 = int(input("enter number"))
+var2 = int(input("enter another number"))
+sum = (var1) / (var2)
+print(f"the total is {sum}")
 
 
   
@@ -25,5 +25,5 @@ def arg(mess,app):
     print(mess + app)
 
 arg("i love", "to program")
-price = input("enter price")
-print(f"the price is {price}")
+
+
