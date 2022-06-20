@@ -3,7 +3,7 @@ def subtract(var1:int,var2:int):
     var3 = var1 - var2
     return (var3)
 #defining a function that divides
-def division(var1:int,var2:int):
+def division(var1,var2):
     var3 = var1 / var2
     return (var3)
 
@@ -15,6 +15,5 @@ def main():
     print(f"value of c is {c}")
     d = division(a,b)
     print(f"value of d is {d}")
-    #print(x)
 if __name__ == "__main__":
     main()
