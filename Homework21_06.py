@@ -4,7 +4,7 @@ ages = ['9','11','46','47']
 
 #adds a name to the end of list
 names.append('bob')
-#prints name in spot 3
+#prints the name in spot 3
 print(names[3])
 #finds names in the first two positions
 print(names[:2])
