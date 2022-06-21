@@ -14,7 +14,7 @@ print('richie'in names)
 print(names + ages)
 #extends one list to another
 ages.extend(names)
-#turns a lis into a tuple
+#turns a list into a tuple
 ages = tuple(ages)
 
 #creates a dictionary
@@ -24,5 +24,5 @@ richdict = {'name': 'nick','age': '16','address': '6 turnout lane',
 print(richdict['age'])
 #prints key value names
 print(richdict.keys())
-#
-print(f "the address of nick is "{richdict[address]})
+#prints out value in dictionary
+print(f"the address of nick is {richdict['address']}")
