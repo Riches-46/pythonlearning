@@ -1,13 +1,14 @@
+
+    
 x  = 2
 def addition(var1:int,var2:int):
     var3 = var1+var2
     #print(x)
     return var3
-def multiply(var1,var2):
+def multiply(var1:int,var2:int):
     var3 = var1*var2
     #print(var3)
     return var3
-
 
 def main():
     a = float(input("enter number "))
@@ -16,7 +17,7 @@ def main():
     print(f"value of c is {c}")
     d = multiply(a,b)
     print(f"value of d is {d}")
-    #print(x)
+    print(x)
 if __name__ == "__main__":
     main()
-    
+
