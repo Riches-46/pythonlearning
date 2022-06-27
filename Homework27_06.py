@@ -6,7 +6,7 @@ def new():
     n = int(input("Enter amount of numbers in list : "))
 
     #asserts to make sure there are only 5 elements
-    assert((n) < 6 and (n) > 4)  
+    assert((n) == 5)  
 
     # iterating till the list is populated
     for i in range(0, n):
