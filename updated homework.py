@@ -1,3 +1,4 @@
+
 def addition(var1:int,var2:int):
     var3 = var1+var2
     #print(x)
@@ -12,7 +13,7 @@ def subtraction(var1:int,var2:int):
     return var3
 def division(var1:int,var2:int):
     var3 = var1/var2
-    print(var3)
+    #print(var3)
     return var3
 
 def new():
@@ -21,7 +22,7 @@ def new():
     # number of elements as input
 
     #n = int(input("Enter amount of numbers in list : "))
-    n = 1000
+    n = 1
     #asserts to make sure there are only 5 elements
     #assert((n) == 5)  
 
@@ -33,7 +34,7 @@ def new():
             num2 = int(input("Enter the second number"))
             assert(num2 > 0)
             # adding the element being input to the list
-            my_list1.append(division(num1,num2)) 
+            my_list1.append(division(num1,num2))
         elif operate == "X" or operate == "x":
             break
     print(my_list1)
