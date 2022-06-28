@@ -19,13 +19,7 @@ def division(var1:int,var2:int):
 def new():
     #create an empty list
     my_list1 = []
-    # number of elements as input
-
-    #n = int(input("Enter amount of numbers in list : "))
     n = 1
-    #asserts to make sure there are only 5 elements
-    #assert((n) == 5)  
-
     # iterating till the list is populated
     for i in range(0, n):
         operate = input("Enter A to operate or X to close")
@@ -37,6 +31,16 @@ def new():
             my_list1.append(division(num1,num2))
         elif operate == "X" or operate == "x":
             break
+    for i in range(0, n):
+        operate = input("Enter A to operate or X to close")
+        if operate == "A" or operate == "a":
+            num1 = int(input("Enter the first number"))
+            num2 = int(input("Enter the second number"))
+            assert(num2 > 0)
+            # adding the element being input to the list
+            my_list1.append(addition(num1,num2))
+        elif operate == "X" or operate == "x":
+            break    
     print(my_list1)
     
 def main():
