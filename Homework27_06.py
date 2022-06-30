@@ -11,8 +11,7 @@ def new():
     # iterating till the list is populated
     for i in range(0, n):
         num1 = int(input())
-    
-    # adding the element being input to the list
+        # adding the element being input to the list
         my_list1.append(num1) 
     print(my_list1)
     
