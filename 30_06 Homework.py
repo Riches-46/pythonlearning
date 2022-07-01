@@ -8,7 +8,8 @@ import csv
 with open('myTable.csv','w+') as f:
     table = csv.writer(f)
     table.writerow(["num1","num2","operation","results"])
-    num1 = input("Please enter first number :")
-    num2 = input("Please enter second number :")
-    operation = input("Please enter a math function :")
-    table.writerow([num1,num2,operation])
+    numb1 = input("Please enter first number :")
+    numb2 = input("Please enter second number :")
+    operation1 = input("Please enter a math function :")
+    
+    table.writerow([numb1,numb2,operation1])
