@@ -1,12 +1,13 @@
 
-def addition(var1:int,var2:int):
+def additions(var1:int,var2:int):
     var3 = var1+var2
     return var3
-def subtraction(var1:int,var2:int):
+def subtractions(var1:int,var2:int):
     var4 = var1-var2
     return var4
 
 n = 1
+
 f = open("new_table.csv","w")
    
 #num1 = input ("Enter first number: ")
@@ -18,17 +19,11 @@ for i in range(0, n):
         if operate == "A" or operate == "a":
             num1 = int(input("Enter the first number : "))
             num2 = int(input("Enter the second number : "))
-            operator = str(input("Enter either addition or subtraction : "))
+            operator = str(input("Enter either 1 for addition or 2 for subtraction : "))     
             assert(num2 > 0)   
         elif operate == "X" or operate == "x":
-            break
-        results = operator 
-        if operator == addition:
-            print(addition)
-        elif operator == subtraction:
-            print(subtraction) 
-            b   
-file = open ("new_table.csv", "a")
+            break          
+file = open ("new_table.csv", "w")
 file.write ("Number 1 Number 2 operation Result\n")
 file.write ("{}  {}  {}   {} \n".format(num1, num2, operator, results))
 
