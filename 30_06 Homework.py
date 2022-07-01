@@ -1,9 +1,9 @@
 import csv
 
-#num1 = []
-#num2 = []
-#operation = []
-#finalResults = []
+def additions(var1:int,var2:int):
+    var3 = var1+var2
+    return var3
+
 
 with open('myTable.csv','w+') as f:
     table = csv.writer(f)
@@ -14,4 +14,5 @@ with open('myTable.csv','w+') as f:
     numb2 = input("Please enter second number :")
     operation1 = input("Please enter a math function :")
     
-    table.writerow([numb1,numb2,operation1])
+
+    table.writerow([numb1,numb2,operation1,results])
