@@ -2,16 +2,16 @@ def table_csv():
 
     f = open("another_table.csv", "w")
 
-# This function adds two numbers
+# addition function
 def add(num1, num2):
     return num1 + num2
 
-# This function subtracts two numbers
+# subtraction function
 def subtract(num1, num2):
     return num1 - num2
 
-# This function multiplies two numbers
-def multiplnum2(num1, num2):
+# multiplication function
+def multiply(num1, num2):
     return num1 * num2
 
 # This function divides two numbers
@@ -20,10 +20,10 @@ def divide(num1, num2):
 
 # shows user type of operation to be cacluated
 print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiplnum2")
-print("4.Divide")
+print("1.Addition")
+print("2.Subtraction")
+print("3.Multiplication")
+print("4.Division")
 
 while True:
     # take input from the user
@@ -41,8 +41,8 @@ while True:
             print(num1, "-", num2, "=", subtract(num1, num2))
             results = subtract(num1, num2)
         elif select_operator == '3':
-            print(num1, "*", num2, "=", multiplnum2(num1, num2))
-            results = multiplnum2(num1, num2)
+            print(num1, "*", num2, "=", multiply(num1, num2))
+            results = multiply(num1, num2)
         elif select_operator == '4':
             print(num1, "/", num2, "=", divide(num1, num2))
             results = divide(num1, num2)
