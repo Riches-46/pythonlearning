@@ -20,35 +20,39 @@ def divide(num1, num2):
 
 # shows user type of operation to be cacluated
 print("Select operation.")
-print("1.Addition")
-print("2.Subtraction")
-print("3.Multiplication")
-print("4.Division")
+print("Addition")
+print("Subtraction")
+print("Multiplication")
+print("Division")
 
 while True:
     # take input from the user
-    select_operator = input("Enter operation to be calculated (1/2/3/4): ")
+    select_operator = input("Enter operation to be calculated (Addition,Subtraction,Multiplication,Division): ")
 
     # check if select_operator is one of the four options
-    if select_operator in ('1', '2', '3', '4'):
+    if select_operator in ('Addition', 'Subtraction', 'Multiplication', 'Division'):
         num1 = int(input("Enter first number: "))
         num2 = int(input("Enter second number: "))
         #mathmatical calculations
-        if select_operator == '1':
+        if select_operator == 'Addition':
             print(num1, "+", num2, "=", add(num1, num2))
             results = add(num1, num2)
-        elif select_operator == '2':
+            operator = "addition"
+        elif select_operator == 'Subtraction':
             print(num1, "-", num2, "=", subtract(num1, num2))
             results = subtract(num1, num2)
-        elif select_operator == '3':
+            operator = "subtraction"
+        elif select_operator == 'Multiplication':
             print(num1, "*", num2, "=", multiply(num1, num2))
             results = multiply(num1, num2)
-        elif select_operator == '4':
+            operator = "multiplication"
+        elif select_operator == 'Division':
             print(num1, "/", num2, "=", divide(num1, num2))
             results = divide(num1, num2)
+            operator = "division"
         # check if user wants another calculation
         # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
+        next_calculation = input("would you like to do another calculation? (yes/no): ")
         if next_calculation == "no":
           break   
     else:
@@ -59,5 +63,5 @@ if __name__ == "__main__":
     main()
 #populate table in csv     
 file = open ("another_table.csv", "w")
-file.write ("Number 1 Number 2 Result\n")
-file.write ("{}       {}        {}      \n".format(num1, num2, results))
+file.write ("Number 1 Number 2 Operation Result\n")
+file.write ("{}       {}        {}     {} \n".format(num1, num2, operator, results))
