@@ -1,6 +1,7 @@
 #main function
 from pathlib import Path
-
+import os
+from re import A
 
 # addition function
 def add(num1, num2):
@@ -46,15 +47,15 @@ def main():
         else:
             print("Invalid Input")
         #populate table in csv     (Comma Seperated Values)
-        file = open("another_table1.csv", "a")
+        file = open("C:\\Users\\ww\\another_table2.csv", "a")
         file.write("Number 1,Number 2,Operation,Result\n")
         file.write(f"{num1},{num2},{operator},{results}\n")
-        file.close()
-
+        
+        
         next_calculation = input("would you like to do another calculation? (yes/no): ")
         if next_calculation.lower() == "no":
             break  
-
+        
    
 
 if __name__ == "__main__":
