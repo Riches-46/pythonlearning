@@ -17,7 +17,7 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
-
+header_add = False
 def main():
     while True:
         # take input from the user
@@ -48,7 +48,9 @@ def main():
         #file = open("C:\\Users\\ww\\another_table2.csv", "a")
         for i in range (1,4):
             with open("another_table1.csv", "a") as f:
-                f.write(f"Number 1,Number 2,Operation,Result\n")
+                if not header_add:
+                    f.write(f"Number 1,Number 2,Operation,Result\n")
+                    header_add = True
                 f.write(f"{num1},{num2},{operator},{results}\n")
           
         next_calculation = input("would you like to do another calculation? (yes/no): ")
