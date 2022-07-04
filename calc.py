@@ -1,7 +1,6 @@
 #main function
-def table_csv():
-    #creates and writes to a csv file
-    f = open("another_table.csv", "w")
+from pathlib import Path
+from re import A
 
 # addition function
 def add(num1, num2):
@@ -19,51 +18,44 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
-# shows user type of operation to be cacluated
-print("Operation Types.")
-print("Addition")
-print("Subtraction")
-print("Multiplication")
-print("Division")
-
-while True:
-    # take input from the user
-    select_operator = input("Enter operation to be calculated : ")
-
-    # check if select_operator is one of the four options
-    if select_operator in ('Addition', 'Subtraction', 'Multiplication', 'Division'):
-        num1 = int(input("Enter first number: "))
-        num2 = int(input("Enter second number: "))
-        #mathmatical calculations
-        if select_operator == 'Addition':
-            print(num1, "+", num2, "=", add(num1, num2))
-            results = add(num1, num2)
-            operator = "addition"
-        elif select_operator == 'Subtraction':
-            print(num1, "-", num2, "=", subtract(num1, num2))
-            results = subtract(num1, num2)
-            operator = "subtraction"
-        elif select_operator == 'Multiplication':
-            print(num1, "*", num2, "=", multiply(num1, num2))
-            results = multiply(num1, num2)
-            operator = "multiplication"
-        elif select_operator == 'Division':
-            print(num1, "/", num2, "=", divide(num1, num2))
-            results = divide(num1, num2)
-            operator = "division"
-        # check if user wants another calculation
-        # break the loop if answer is no
-        next_calculation = input("would you like to do another calculation? (yes/no): ")
-        if next_calculation == "no":
-          break   
-    else:
-        print("Invalid Input")
 
 def main():
-    table_csv()
+    while True:
+        # take input from the user
+        select_operator = input("""Operation Types.\n
+        (A) Addition\n(B) Subtraction\n(C) Multiplication\n(D) Division\n
+        Enter operation to be calculated : """)
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: ")) 
+        if select_operator.lower() == 'a':
+            results = add(num1, num2)
+            print(num1, "+", num2, "=", results)
+            operator = "addition"
+        elif select_operator.lower() == 'b':
+            results = subtract(num1, num2)
+            print(num1, "-", num2, '=', results)
+            operator = "subtraction"
+        elif select_operator.lower() == 'c':
+            results = multiply(num1, num2)
+            print(num1, "*", num2, '=', results)
+            operator = "multiplication"
+        elif select_operator.lower() == 'd':
+            results = divide(num1, num2)
+            print(num1, "/", num2, '=', results)
+            operator = "division"
+        else:
+            print("Invalid Input")
+        #populate table in csv     (Comma Seperated Values)
+        file = open("another_table1.csv", "a")
+        file.write("Number 1,Number 2,Operation,Result\n")
+        file.write(f"{num1},{num2},{operator},{results}\n")
+        file.close()
+
+        next_calculation = input("would you like to do another calculation? (yes/no): ")
+        if next_calculation.lower() == "no":
+            break  
+
+   
+
 if __name__ == "__main__":
     main()
-#populate table in csv     
-file = open("another_table.csv", "w")
-file.write ("Number 1 Number 2 Operation Result\n")
-file.write ("{:>15} {:>15} {:>10} {:>10} \n".format(num1, num2, operator, results))
