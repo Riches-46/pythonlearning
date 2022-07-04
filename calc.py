@@ -48,7 +48,7 @@ def main():
         #populate table in csv     (Comma Seperated Values)
         #file = open("C:\\Users\\ww\\another_table2.csv", "a")
         header_add = False
-        for i in range (1,4):
+        for i in range (1,5):
             with open("another_table1.csv", "a") as f:
                 if not header_add:
                     f.write(f"Number 1,Number 2,Operation,Result\n")
