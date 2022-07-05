@@ -20,6 +20,15 @@ def divide(num1, num2):
 
 
 def main():
+    dir_data = Path("output")
+    dir_data.mkdir(parents=True, exist_ok=True)
+
+    
+    filepath = dir_data / "file.csv"
+    if not filepath.is_file():
+        with open(filepath, "a") as f:
+            f.write(f"Number 1,Number 2,Operation,Result\n")
+
     while True:
         # take input from the user
         select_operator = input("""Operation Types.\n
@@ -46,14 +55,12 @@ def main():
         else:
             print("Invalid Input")
         #populate table in csv     (Comma Seperated Values)
-        #file = open("C:\\Users\\ww\\another_table2.csv", "a")
-        header_add = False
-        for i in range (1,10):
-            with open("another_table1.csv", "a") as f:
-                if not header_add:
-                    f.write(f"Number 1,Number 2,Operation,Result\n")
-                    header_add = True
-                f.write(f"{num1},{num2},{operator},{results}\n")
+        #file = open("C:\\Users\\ww\\another_table2.csv", "a")a
+
+        
+        
+        with open(filepath, "a") as f:
+            f.write(f"{num1},{num2},{operator},{results}\n")
           
         next_calculation = input("would you like to do another calculation? (yes/no): ")
         if next_calculation.lower() == "no":
