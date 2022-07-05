@@ -1,9 +1,9 @@
 import logging
 from pathlib import Path
 import datetime
-def log_inform():
-    dir_data = Path("log")
-    dir_data.mkdir(parents=True, exist_ok=True)
+#def log_inform():
+dir_data = Path("log")
+dir_data.mkdir(parents=True, exist_ok=True)
 log_filename = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
 print(log_filename)
 

@@ -19,7 +19,7 @@ def divide(num1, num2):
 def main():
     dir_data = Path("output")
     dir_data.mkdir(parents=True, exist_ok=True)
-
+    
     
     filepath = dir_data / "file.csv"
     if not filepath.is_file():
