@@ -1,6 +1,4 @@
-#main function
 from pathlib import Path
-
 
 # addition function
 def add(num1, num2):
@@ -17,7 +15,6 @@ def multiply(num1, num2):
 # Division function 
 def divide(num1, num2):
     return num1 / num2
-
 
 def main():
     dir_data = Path("output")
@@ -64,8 +61,8 @@ def main():
           
         next_calculation = input("would you like to do another calculation? (yes/no): ")
         if next_calculation.lower() == "no":
-            break  
-        
+          break    
+                  
    
 
 if __name__ == "__main__":
