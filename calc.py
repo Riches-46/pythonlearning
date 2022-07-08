@@ -17,8 +17,8 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
     
-
-def main():
+logging.basicConfig(filename='new_log.log', level=logging.DEBUG)
+def main(select_operator):
     dir_data = Path("output")
     dir_data.mkdir(parents=True, exist_ok=True)
     
@@ -39,6 +39,8 @@ def main():
             results = add(num1, num2)
             print(num1, "+", num2, "=", results)
             operator = "addition"
+            logging.debug('check for addition')
+            return 'addition'
         elif select_operator.lower() == 'b':
             results = subtract(num1, num2)
             print(num1, "-", num2, '=', results)
@@ -53,7 +55,7 @@ def main():
             operator = "division"
         else:
             print("Invalid Input")
-           
+        print(main())   
         with open(filepath, "a") as f:
             f.write(f"{num1},{num2},{operator},{results}\n")
           
@@ -64,4 +66,4 @@ def main():
    
 
 if __name__ == "__main__":
-    main()
+    main('select_operator')
