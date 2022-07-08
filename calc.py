@@ -53,11 +53,7 @@ def main():
             operator = "division"
         else:
             print("Invalid Input")
-        #populate table in csv     (Comma Seperated Values)
-        #file = open("C:\\Users\\ww\\another_table2.csv", "a")a
-
-        
-        
+           
         with open(filepath, "a") as f:
             f.write(f"{num1},{num2},{operator},{results}\n")
           
