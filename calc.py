@@ -17,15 +17,15 @@ def multiply(num1, num2):
 def divide(num1, num2):
     return num1 / num2
 
-dir_data = Path("new_log")
-#dir_data.mkdir(parents=True, exist_ok=True)
+dir_data = Path("test_logs")
+dir_data.mkdir(parents=True, exist_ok=True)
 log_filename = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
 print(log_filename)
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     datefmt='%m-%d-%Y %H:%M:%S',
-                    filename=f'log/{log_filename}.log',
+                    filename=f'test_logs/{log_filename}.log',
                     filemode='w')
     
 #logging.basicConfig(filename='new_log.log',
