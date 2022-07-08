@@ -1,6 +1,6 @@
 from pathlib import Path
 import logging
-
+import datetime
 # addition function
 def add(num1, num2):
     return num1 + num2
@@ -16,9 +16,24 @@ def multiply(num1, num2):
 # Division function 
 def divide(num1, num2):
     return num1 / num2
+
+dir_data = Path("new_log")
+#dir_data.mkdir(parents=True, exist_ok=True)
+log_filename = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
+print(log_filename)
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%m-%d-%Y %H:%M:%S',
+                    filename=f'log/{log_filename}.log',
+                    filemode='w')
     
-logging.basicConfig(filename='new_log.log', level=logging.DEBUG)
-def main(select_operator):
+#logging.basicConfig(filename='new_log.log',
+                    #format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    #datefmt='%m-%d-%Y %H:%M:%S',
+                    #level=logging.DEBUG)
+
+def main():
     dir_data = Path("output")
     dir_data.mkdir(parents=True, exist_ok=True)
     
@@ -40,30 +55,32 @@ def main(select_operator):
             print(num1, "+", num2, "=", results)
             operator = "addition"
             logging.debug('check for addition')
-            return 'addition'
         elif select_operator.lower() == 'b':
             results = subtract(num1, num2)
             print(num1, "-", num2, '=', results)
             operator = "subtraction"
+            logging.debug('check for subtraction')
         elif select_operator.lower() == 'c':
             results = multiply(num1, num2)
             print(num1, "*", num2, '=', results)
             operator = "multiplication"
+            logging.debug('check for multiplication')
         elif select_operator.lower() == 'd':
             results = divide(num1, num2)
             print(num1, "/", num2, '=', results)
             operator = "division"
+            logging.debug('check for division')
         else:
             print("Invalid Input")
-        print(main())   
+          
         with open(filepath, "a") as f:
             f.write(f"{num1},{num2},{operator},{results}\n")
-          
+        
         next_calculation = input("would you like to do another calculation? (yes/no): ")
         if next_calculation.lower() == "no":
           break    
-                  
+        print(main('select_operator'))           
    
 
 if __name__ == "__main__":
-    main('select_operator')
+    main()
