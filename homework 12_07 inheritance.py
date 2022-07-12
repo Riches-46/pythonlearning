@@ -1,19 +1,27 @@
-class Father:
-   num1 = 0
-   def father(self):
-    print(self.num1)
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-class Mother:
-   num2 = 0
-   def mother(self):
-    print(self.num2)
+    def __add__(self, other):
+        x = self.x + other.y
+        y = self.y + other.x
+        return Vector(x, y)
+    
+    def __mul__(self, other):
+        x = self.x * other.y
+        y = self.y * other.x
+        return Vector(x, y)
 
-class Grandparent(Father, Mother):
-   def grandparent(self):
-    print(self.num1)
-    print(self.num2)
 
-s1 = Grandparent()
-s1.num1 = 2,10
-s1.num2 = 5,-2
-s1.grandparent()
+u = Vector(2, 10)
+v = Vector(5, -2)
+
+w1 = u + v
+#w2 = u.__add__(v)
+
+#w1 = u * v
+w2 = u.__mul__(v)
+
+print(w1.x, w2.y) 
+#print(w2.x, w2.y) 
