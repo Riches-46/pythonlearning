@@ -3,6 +3,7 @@ import logging
 import datetime
 # addition function
 def add(num1, num2):
+    logger1.info("add function")
     return num1 + num2
 
 # subtraction function
@@ -16,24 +17,28 @@ def multiply(num1, num2):
 # Division function 
 def divide(num1, num2):
     return num1 / num2
-
-dir_data = Path("test_logs")
-dir_data.mkdir(parents=True, exist_ok=True)
-log_filename = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
-print(log_filename)
-
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
-                    datefmt='%m-%d-%Y %H:%M:%S',
-                    filename=f'test_logs/{log_filename}.log',
-                    filemode='w')
     
+def initializing_log():
+    #logging 
+    dir_data = Path("test_logs")
+    dir_data.mkdir(parents=True, exist_ok=True)
+    log_filename = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
+    print(log_filename)
+
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                        datefmt='%m-%d-%Y %H:%M:%S',
+                        filename=f'test_logs/{log_filename}.log',
+                        filemode='w')
+    global logger1
+    logger1 = logging.getLogger("example")
 #logging.basicConfig(filename='new_log.log',
                     #format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     #datefmt='%m-%d-%Y %H:%M:%S',
                     #level=logging.DEBUG)
 
 def main():
+    initializing_log()
     dir_data = Path("output")
     dir_data.mkdir(parents=True, exist_ok=True)
     
