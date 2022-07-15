@@ -111,7 +111,7 @@ class BikeRental:
                 bill = bill * 0.7
 
             print("Thanks for returning your bike. Hope you enjoyed our service!")
-            print("That would be ${}".format(bill))
+            print("That would be €{}".format(bill))
             return bill
         else:
             print("Are you sure you rented a bike with us?")
